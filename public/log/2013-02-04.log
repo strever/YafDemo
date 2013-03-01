@@ -1,0 +1,8 @@
+2013-02-04 07:53:39 #0 [internal function]: handleError(2, 'mysql_fetch_arr...', 'F:\MYwork\demo\...', 219, Array)
+#1 F:\MYwork\demo\library\Db\Mysql.php(219): mysql_fetch_array(false, 1)
+#2 F:\MYwork\demo\library\Db\Mysql.php(330): Db_Mysql->getArray(false)
+#3 F:\MYwork\demo\application\models\Admin.php(17): Db_Mysql->getRow('SELECT * FROM `...')
+#4 F:\MYwork\demo\application\controllers\Admin\Login.php(35): AdminModel->login_sign('melon', '25d55ad283aa400...')
+#5 [internal function]: Admin_LoginController->LoginsAction()
+#6 F:\MYwork\demo\public\index.php(8): Yaf_Application->run()
+#7 {main}PHP warning in file F:\MYwork\demo\library\Db\Mysql.php (219): mysql_fetch_array() expects parameter 1 to be resource, boolean given

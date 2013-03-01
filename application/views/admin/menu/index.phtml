@@ -1,0 +1,19 @@
+<script type="text/javascript" SRC="/js/dtree.js"></script>
+<!-- Your Custom Stylesheet --> 
+<link rel="stylesheet" href="/css/custom.css" type="text/css" />
+<link rel="stylesheet" href="/css/dtree.css" type="text/css" />
+
+<script type="text/javascript">
+
+d = new dTree('d');
+//d.config.target = "main";
+d.add(0, -1, '<b>后台管理首页</b>', 'index', '', 'mainframe', '', '', false);
+<?php 
+foreach($this->menus as $m){
+	echo "d.add('{$m['id']}','{$m['pid']}','{$m['name']}','{$m['url']}','','mainframe','','',false);";
+}  
+?>
+</script>
+<div style="height:100%; width:100%;">
+		<script type="text/javascript">document.write(d);</script>
+</div>

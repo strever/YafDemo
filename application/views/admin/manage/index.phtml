@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/css/dtree.css" type="text/css" />
+<link rel="stylesheet" href="/css/frame.css" type="text/css" />
+<script type="text/javascript" src="/js/frame.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#id-navToggle').click(function(){
+		var tb = $('.v_reportview_panels');
+		if(!tb.attr('style')){
+			tb.attr('style','display:none;');
+		}else{
+			tb.attr('style','');
+		}
+	});
+	$("li[id^='menu_']").click(function(){
+                                        $('#mainframe').attr("src","index.php?act=main");
+		$("li[class='current']").attr('class','');
+		$(this).addClass("current");
+	});
+        $('#search').click(function(){
+                $('#mainframe').attr("src","index.php?act=system.search.index");
+		$("li[class='current']").attr('class','');
+        })
+
+});
+</script>
+
+</head>
+<body>
+<div id="top" style="height: 85px;">
+        <div class="wrapper">
+                <div id="title"><img SRC="/img/logo.png" alt="系统管理中心" /></div>
+                <div id="topnav">
+                        <a href="#"><img class="avatar" SRC="img/user_32.png" alt="" /></a>
+                        您好 <b><?php echo $info['nickname']; ?></b>
+                        <span>|</span> <a href="index.php?act=editmyinfo" target="mainframe">设置</a>
+                        <span>|</span> <a href="admin_login/logout">退出</a><br />
+                        <small>您所属 <a class="high"> </a></small>
+                </div>
+                <div id="menu" style="margin-top: -24px;">
+                        <ul class="sf-menu">
+                                <li class="current" id='menu_index'><a href="" title="首页">首页</a></li>
+                        </ul>
+                </div>
+        </div>
+</div>
+
+<div style="margin-top: -24px;height:100%;width:100%">    
+    	<div id="pagetitle" style="top: 85px;">
+		<div class="wrapper">
+		</div>
+	</div>
+	<div id="page">
+ 		<div id="frame-menu" class="v_reportview_panels" style="height:800px;">
+			<iframe id="menuframe" scrolling="auto" frameborder="0" style="height:100%;overflow:auto;width:100%;" src="/admin_menu/" marginwidth="0" marginheight="0" name="menuframe"></iframe>
+		</div>
+ 		<div id="id-navToggle" class="c_nav_toggle"  >&nbsp;</div>
+		<div id="frame-main" class="v_reportview_content">
+			<iframe id="mainframe" scrolling="auto" frameborder="0" style=" height: 85%;overflow: auto;position:absolute;visibility: visible;width: 100%;z-index:1;" src="" marginwidth="0" marginheight="0" name="mainframe"></iframe>
+        </div>
+	</div>
+</div>
+<script type="text/javascript" SRC="/js/administry.js"></script>
